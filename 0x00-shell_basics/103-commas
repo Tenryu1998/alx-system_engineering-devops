@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ap | awk '{ORS=(NR>2&&NR<NR-1)?", ":((NR>2)?"":RS); print}'
+ls -ap | awk 'NR>2 && NR<NR-1 {ORS=", "} NR>2 {print} END {print ""}'
